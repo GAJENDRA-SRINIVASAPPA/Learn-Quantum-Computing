@@ -1,1 +1,1 @@
-# -Learn-Quantum-Computing
+# Learn-Quantum-Computing
