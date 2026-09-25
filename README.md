@@ -243,3 +243,35 @@ Blogs and newsletters are great for staying up-to-date with the latest developme
 
 Feel free to contribute to this repository by suggesting additional resources or improvements to the existing list. Happy learning!
 
+# Quantum Mentor
+
+Quantum Mentor is a small AI learning project for a common beginner problem in quantum computing: it is difficult to connect a circuit's gates with the outcomes of a measurement.
+
+The app lets a learner enter a one-to-three-qubit circuit, simulates it, visualizes the measurement probabilities, and explains the result in plain language. It works offline with a deterministic tutor. If `OPENAI_API_KEY` is set, it can use an OpenAI model for a more conversational explanation and falls back locally if the request fails.
+
+## Run it
+
+Requires Python 3.10 or newer. No package installation is needed.
+
+```bash
+python app.py
+```
+
+Open <http://localhost:8000>. Try this Bell-state circuit:
+
+```text
+H 0
+CNOT 0 1
+```
+
+Supported gates are `H`, `X`, `Z`, and `CNOT`. Run the checks with:
+
+```bash
+python -m unittest -v
+```
+
+Optional LLM mode:
+
+```bash
+OPENAI_API_KEY=your-key python app.py
+```
